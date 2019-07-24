@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<center><h1 id="4">Игра пошла</h1>
+    <h1>Ваш счет</h1><h1 id="5">0</h1>
+    <img id="1" src="pudge.jpg"><img id="2" src="pudge.jpg"><img id="3" src="pudge.jpg"></br>
+<button onclick="boom()"><img src="button.png" height="50"></button>
+</center>
+</body>
+<script>
+    i=1
+    x=1
+    y=1
+    a=0
+    score=0
+    function boom(){
+        i=Math.floor(Math.random()*5)+1
+        x=Math.floor(Math.random()*5)+1
+        y=Math.floor(Math.random()*5)+1
+        if(i===1){
+            document.getElementById('1').src='king.jpg'
+        }
+        else if(i===2){
+            document.getElementById('1').src='oracle.jpg'
+        }
+        else if(i===3){
+            document.getElementById('1').src='pudge.jpg'
+        }
+        else if(i===4){
+            document.getElementById('1').src='rubick.jpg'
+        }
+        else if(i===5){
+            document.getElementById('1').src='witch.jpg'
+        }
+        if(x===1){
+            document.getElementById('2').src='king.jpg'
+        }
+        else if(x===2){
+            document.getElementById('2').src='oracle.jpg'
+        }
+        else if(x===3){
+            document.getElementById('2').src='pudge.jpg'
+        }
+        else if(x===4){
+            document.getElementById('2').src='rubick.jpg'
+        }
+        else if(x===5){
+            document.getElementById('2').src='witch.jpg'
+        }
+        if(y===1){
+            document.getElementById('3').src='king.jpg'
+        }
+        else if(y===2){
+            document.getElementById('3').src='oracle.jpg'
+        }
+        else if(y===3){
+            document.getElementById('3').src='pudge.jpg'
+        }
+        else if(y===4){
+            document.getElementById('3').src='rubick.jpg'
+        }
+        else if(y===5){
+            document.getElementById('3').src='witch.jpg'
+        }
+        if(i===x&&i===y){
+            a='Отлично,можешь больше?'
+            score=score+3
+            document.getElementById('4').innerHTML=a
+            document.getElementById('5').innerHTML=score
+        }
+        else if(i===x||x===y||y===i) {
+            a = 'Неплохо,давай дальше'
+            score = score + 1
+            document.getElementById('4').innerHTML = a
+            document.getElementById('5').innerHTML = score
+        }
+        else{
+            a='Попробуй еще раз'
+            score=score-1
+            document.getElementById('4').innerHTML=a
+            document.getElementById('5').innerHTML=score
+        }
+
+    }
+</script>
+</html>
